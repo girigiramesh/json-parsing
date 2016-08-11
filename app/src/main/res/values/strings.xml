@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">json-parsing</string>
+    <string name="button_hit">Hit</string>
+</resources>
