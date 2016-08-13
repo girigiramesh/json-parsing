@@ -39,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
     }
     public class asynchttpTask extends AsyncTask<String,String,String>{
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            tv_jsonlist.setText(result);
+        }
+
+        @Override
         protected String doInBackground(String... params) {
             HttpURLConnection httpURLConnection = null;
             BufferedReader reader = null;
@@ -94,11 +104,6 @@ public class MainActivity extends AppCompatActivity {
            return null;
         }
 
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            tv_jsonlist.setText(result);
-        }
     }
 
 }
